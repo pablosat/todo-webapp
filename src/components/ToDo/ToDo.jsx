@@ -1,13 +1,10 @@
 import { useReducer } from "react";
-import AddToDo from "./AddToDo/AddToDo";
-import { ToDoItem } from "./ToDoItem/ToDoItem";
-import { toDoReducer } from "./toDoReducer";
+import AddToDo from "../AddToDo/AddToDo";
+import { ToDoItem } from "../ToDoItem/ToDoItem";
+import { toDoReducer } from "../toDoReducer";
 
-const ToDo = () => {
+export const ToDo = () => {
   const [state, dispatch] = useReducer(toDoReducer, toDoReducer());
-
-  const hola = "hola";
-  console.log(state);
   return (
     <div>
       <AddToDo dispatch={dispatch} />
@@ -21,5 +18,3 @@ const ToDo = () => {
     </div>
   );
 };
-
-export default ToDo;
