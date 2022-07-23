@@ -1,5 +1,5 @@
 import { ToDo } from "./components/ToDo/ToDo";
-import "./styles.css";
+import "./styles.scss";
 
 export default function App() {
   return (
