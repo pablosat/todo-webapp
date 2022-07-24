@@ -1,24 +1,29 @@
 import { useState } from "react";
 import { addToDo } from "../toDoReducer";
 
-const AddToDo = ({ dispatch }) => {
+import "./AddToDo.scss";
+import { checkIfValid } from "./helpers";
+
+const AddToDo = ({ dispatch, state }) => {
   const [toDoName, setToDoName] = useState("");
+  const onChangeHandler = (e) => setToDoName(e.target.value);
+  const handleAddToDo = (e) => {
+    e.preventDefault();
+    const isValid = checkIfValid(state, toDoName);
+    if (isValid) {
+      dispatch(addToDo({ name: toDoName }));
+      setToDoName("");
+    }
+  };
   return (
     <div>
-      Add to do:
       <input
-        style={{ margin: "0 4px" }}
-        type="text"
+        className="textInput"
         value={toDoName}
-        onChange={(a) => setToDoName(a.target.value)}
+        onChange={onChangeHandler}
+        placeholder="What do you need to do?"
       />
-      <button
-        onClick={(e) => {
-          e.preventDefault();
-          dispatch(addToDo({ name: toDoName }));
-          setToDoName("");
-        }}
-      >
+      <button disabled={!toDoName} onClick={handleAddToDo}>
         add
       </button>
     </div>

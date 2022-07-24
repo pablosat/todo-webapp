@@ -1,0 +1,32 @@
+.itemContainer {
+  margin: 12px 0;
+}
+
+.editInput {
+  margin: 0 4px;
+}
+
+.button {
+  display: inline;
+  margin: 6px;
+  cursor: pointer;
+  background: gray;
+  padding: 3px 12px;
+  border-radius: 4px;
+}
+
+.delete {
+  background: #cf344b;
+}
+
+.edit {
+  background: #f5df95;
+}
+
+.submit {
+  background: green;
+}
+
+.disable {
+  cursor: no-drop;
+}
