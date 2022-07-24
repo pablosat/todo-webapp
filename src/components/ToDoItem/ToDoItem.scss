@@ -12,10 +12,15 @@
   margin: 0 6px;
   cursor: pointer;
   color: #4c5226;
+  font-size: 14px;
 }
 
 .button:hover {
   color: black;
+}
+
+.disabled {
+  cursor: not-allowed;
 }
 
 .item {

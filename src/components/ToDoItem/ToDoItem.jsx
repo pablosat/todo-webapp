@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   FaCheck,
   FaRegCheckCircle,
@@ -15,13 +15,30 @@ export const ToDoItem = ({ toDo: { id, name, completed }, dispatch }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [newName, setNewName] = useState(name);
 
+  const inputRef = useRef(null);
+
   const handleEdit = () => setIsEditing(!isEditing);
+
+  useEffect(() => {
+    if (isEditing) {
+      inputRef.current.focus();
+    }
+  }, [isEditing]);
   const canSubmit = name !== newName && !!newName;
 
   const handleSubmit = () => {
     if (canSubmit) {
       setIsEditing(false);
       dispatch(editToDo({ id, name: newName }));
+    }
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      handleSubmit();
+    }
+    if (event.key === "Escape") {
+      handleEdit();
     }
   };
 
@@ -33,6 +50,7 @@ export const ToDoItem = ({ toDo: { id, name, completed }, dispatch }) => {
 
   const Checkbox = () => (completed ? <FaRegCheckCircle /> : <FaRegCircle />);
 
+  const submitClass = canSubmit ? "button" : "button disabled";
   return (
     <div className={itemClassName}>
       <div className="nameColumn">
@@ -43,6 +61,8 @@ export const ToDoItem = ({ toDo: { id, name, completed }, dispatch }) => {
               type="text"
               value={newName}
               onChange={onChangeEditInput}
+              ref={inputRef}
+              onKeyDown={handleKeyDown}
             />
           </>
         ) : (
@@ -58,12 +78,14 @@ export const ToDoItem = ({ toDo: { id, name, completed }, dispatch }) => {
       <div className="actionsColumn">
         {isEditing ? (
           <>
-            <FaCheck onClick={handleSubmit} className="button" />
+            <FaCheck onClick={handleSubmit} className={submitClass} />
             <FaRegTimesCircle onClick={handleEdit} className="button" />
           </>
         ) : (
           <>
-            <FaRegEdit onClick={handleEdit} className="button" />
+            {!completed && (
+              <FaRegEdit onClick={handleEdit} className="button" />
+            )}
             <FaRegTrashAlt onClick={handleDelete} className="button" />
           </>
         )}
