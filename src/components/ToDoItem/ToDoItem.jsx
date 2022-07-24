@@ -34,41 +34,39 @@ export const ToDoItem = ({ toDo: { id, name, completed }, dispatch }) => {
   const Checkbox = () => (completed ? <FaRegCheckCircle /> : <FaRegCircle />);
 
   return (
-    <div className="itemContainer">
-      <div className={itemClassName}>
-        <div className="nameColumn">
-          {isEditing ? (
-            <>
-              <input
-                className="editInput"
-                type="text"
-                value={newName}
-                onChange={onChangeEditInput}
-              />
-            </>
-          ) : (
-            <>
-              <span className="button" onClick={onChangeCheckbox}>
-                <Checkbox />
-              </span>
-              {name}
-            </>
-          )}
-        </div>
+    <div className={itemClassName}>
+      <div className="nameColumn">
+        {isEditing ? (
+          <>
+            <input
+              className="editInput"
+              type="text"
+              value={newName}
+              onChange={onChangeEditInput}
+            />
+          </>
+        ) : (
+          <>
+            <span className="button" onClick={onChangeCheckbox}>
+              <Checkbox />
+            </span>
+            {name}
+          </>
+        )}
+      </div>
 
-        <div className="actionsColumn">
-          {isEditing ? (
-            <>
-              <FaCheck onClick={handleSubmit} className="button" />
-              <FaRegTimesCircle onClick={handleEdit} className="button" />
-            </>
-          ) : (
-            <>
-              <FaRegEdit onClick={handleEdit} className="button" />
-              <FaRegTrashAlt onClick={handleDelete} className="button" />
-            </>
-          )}
-        </div>
+      <div className="actionsColumn">
+        {isEditing ? (
+          <>
+            <FaCheck onClick={handleSubmit} className="button" />
+            <FaRegTimesCircle onClick={handleEdit} className="button" />
+          </>
+        ) : (
+          <>
+            <FaRegEdit onClick={handleEdit} className="button" />
+            <FaRegTrashAlt onClick={handleDelete} className="button" />
+          </>
+        )}
       </div>
     </div>
   );
