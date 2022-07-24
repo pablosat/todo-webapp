@@ -7,11 +7,16 @@ import {
   FaRegTimesCircle,
   FaRegTrashAlt
 } from "react-icons/fa";
+import { checkIfValid } from "../AddToDo/helpers";
 import { deleteToDo, editToDo, markToDo } from "../toDoReducer";
 
 import "./ToDoItem.scss";
 
-export const ToDoItem = ({ toDo: { id, name, completed }, dispatch }) => {
+export const ToDoItem = ({
+  toDo: { id, name, completed },
+  dispatch,
+  state
+}) => {
   const [isEditing, setIsEditing] = useState(false);
   const [newName, setNewName] = useState(name);
 
@@ -27,7 +32,8 @@ export const ToDoItem = ({ toDo: { id, name, completed }, dispatch }) => {
   const canSubmit = name !== newName && !!newName;
 
   const handleSubmit = () => {
-    if (canSubmit) {
+    const isValid = checkIfValid(state, newName);
+    if (canSubmit && isValid) {
       setIsEditing(false);
       dispatch(editToDo({ id, name: newName }));
     }

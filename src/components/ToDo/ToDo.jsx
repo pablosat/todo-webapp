@@ -14,7 +14,14 @@ export const ToDo = () => {
       {!!state.length && (
         <div className="listContainer">
           {state.map((todo) => {
-            return <ToDoItem key={todo.id} toDo={todo} dispatch={dispatch} />;
+            return (
+              <ToDoItem
+                key={todo.id}
+                toDo={todo}
+                dispatch={dispatch}
+                state={state}
+              />
+            );
           })}
         </div>
       )}
