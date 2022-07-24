@@ -31,7 +31,7 @@ const AddToDo = ({ dispatch, state }) => {
         className="textInput"
         value={toDoName}
         onChange={onChangeHandler}
-        placeholder="What do you need to do?"
+        placeholder="What you have to do?"
         ref={inputRef}
         onKeyDown={handleKeyDown}
       />

@@ -3,7 +3,7 @@ import "./App.scss";
 
 export default function App() {
   return (
-    <div className="App">
+    <div className="App responsive">
       <h1>Welcome!</h1>
 
       <ToDo />

@@ -12,7 +12,7 @@ export const ToDo = () => {
     <div>
       <AddToDo state={state} dispatch={dispatch} />
       {!!state.length && (
-        <div className="listContainer">
+        <>
           {state.map((todo) => {
             return (
               <ToDoItem
@@ -23,7 +23,7 @@ export const ToDo = () => {
               />
             );
           })}
-        </div>
+        </>
       )}
     </div>
   );

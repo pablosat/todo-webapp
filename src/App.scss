@@ -2,6 +2,17 @@
   font-family: sans-serif;
   text-align: center;
   background: #dde0c1;
-  height: 1000px;
+  min-height: 800px;
   padding: 50px;
+}
+
+.responsive {
+  padding: 5% 30%;
+}
+
+
+@media (max-width:450px) {
+  .responsive {
+    padding: 5%;
+  }
 }

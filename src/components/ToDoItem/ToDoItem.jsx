@@ -61,7 +61,6 @@ export const ToDoItem = ({
     <div className={itemClassName}>
       <div className="nameColumn">
         {isEditing ? (
-          <>
             <input
               className="editInput"
               type="text"
@@ -70,13 +69,14 @@ export const ToDoItem = ({
               ref={inputRef}
               onKeyDown={handleKeyDown}
             />
-          </>
         ) : (
           <>
             <span className="button" onClick={onChangeCheckbox}>
               <Checkbox />
             </span>
-            {name}
+            <span className="textName">
+              {name}
+            </span>
           </>
         )}
       </div>
