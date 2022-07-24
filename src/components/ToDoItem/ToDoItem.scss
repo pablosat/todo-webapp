@@ -1,32 +1,50 @@
 .itemContainer {
-  margin: 12px 0;
+  padding: 0 36px;
 }
 
 .editInput {
-  margin: 0 4px;
+  border: 0;
+  outline: none;
+  width: 100%;
+  cursor:text;
 }
 
 .button {
   display: inline;
-  margin: 6px;
+  margin: 0 6px;
   cursor: pointer;
-  background: gray;
-  padding: 3px 12px;
-  border-radius: 4px;
+  color: #4c5226;
 }
 
-.delete {
-  background: #cf344b;
+.button:hover {
+  color: black;
 }
 
-.edit {
-  background: #f5df95;
+.item {
+  height: 40px;
+  width: 100%; 
+  background:white;
+  margin: 4px 0;
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
 }
 
-.submit {
-  background: green;
+.completed {
+  background: #b0b39d;
+  text-decoration: line-through;
 }
 
-.disable {
-  cursor: no-drop;
+.nameColumn {
+  margin-left: 15px;
+  font-size: 14px;
+  width: 80%;
+  display: flex;
+}
+
+.actionsColumn {
+  margin-right: 12px;
+  width: 20%;
+  display: flex;
+  justify-content: end;
 }

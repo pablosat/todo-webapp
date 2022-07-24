@@ -2,45 +2,5 @@
   margin-top: 40px;
 }
 
-.itemsContainer {
-  padding: 28px;
-  display: flex;
-
-}
-
-.items {
-  //border: 1px solid black;
-  border-radius: 2px;
-  padding: 12px 6px;
-  margin: 2px 0;
-  background: white;
-  /*flex-wrap: nowrap; */
-  justify-content: space-between;
-  display: flex;
-}
 
 
-
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 5%; 
-}
-
-.item {
-  height: 40px;
-  width: 100%; 
-  background:white;
-  margin: 2px 0;
-  display: flex; 
-  justify-content: space-between; 
-  align-items: center;
-
-
-}
-
-.nameColumn {
-  margin-left: 15px;
-  font-size: 14px;
-}
