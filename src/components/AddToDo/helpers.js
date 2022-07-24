@@ -1,2 +1,2 @@
 export const checkIfValid = (toDoList, enteredToDo) =>
-  toDoList.every(({ name }) => name !== enteredToDo);
+  enteredToDo && toDoList.every(({ name }) => name !== enteredToDo);
