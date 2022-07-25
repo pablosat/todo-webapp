@@ -57,6 +57,7 @@ export const ToDoItem = ({
   const Checkbox = () => (completed ? <FaRegCheckCircle /> : <FaRegCircle />);
 
   const submitClass = canSubmit ? "button" : "button disabled";
+
   return (
     <div className={itemClassName}>
       <div className="nameColumn">
