@@ -15,7 +15,7 @@ import "./ToDoItem.scss";
 export const ToDoItem = ({
   toDo: { id, name, completed },
   dispatch,
-  state
+  toDoList
 }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [newName, setNewName] = useState(name);
@@ -32,7 +32,7 @@ export const ToDoItem = ({
   const canSubmit = name !== newName && !!newName;
 
   const handleSubmit = () => {
-    const isValid = checkIfValid(state, newName);
+    const isValid = checkIfValid(toDoList, newName);
     if (canSubmit && isValid) {
       setIsEditing(false);
       dispatch(editToDo({ id, name: newName }));

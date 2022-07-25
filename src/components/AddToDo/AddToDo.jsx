@@ -4,7 +4,7 @@ import { addToDo } from "../toDoReducer";
 import "./AddToDo.scss";
 import { checkIfValid } from "./helpers";
 
-const AddToDo = ({ dispatch, state }) => {
+const AddToDo = ({ dispatch, toDoList }) => {
   const [toDoName, setToDoName] = useState("");
 
   const inputRef = useRef(null);
@@ -15,7 +15,7 @@ const AddToDo = ({ dispatch, state }) => {
 
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
-      const isValid = checkIfValid(state, toDoName);
+      const isValid = checkIfValid(toDoList, toDoName);
       if (isValid) {
         dispatch(addToDo({ name: toDoName }));
         setToDoName("");
