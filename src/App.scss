@@ -1,9 +1,13 @@
+body {
+  margin: 0;
+}
 .App {
   font-family: sans-serif;
   text-align: center;
   background: #dde0c1;
-  min-height: 800px;
+  height: 100vh;
   padding: 50px;
+  box-sizing: border-box
 }
 
 .responsive {
