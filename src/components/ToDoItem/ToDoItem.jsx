@@ -54,7 +54,7 @@ export const ToDoItem = ({
 
   const itemClassName = completed ? "item completed" : "item";
 
-  const Checkbox = () => (completed ? <FaRegCheckCircle /> : <FaRegCircle />);
+  const Checkbox = (props) => (completed ? <FaRegCheckCircle {...props} /> : <FaRegCircle {...props} />);
 
   const submitClass = canSubmit ? "button" : "button disabled";
 
@@ -72,9 +72,7 @@ export const ToDoItem = ({
             />
         ) : (
           <>
-            <span className="button" onClick={onChangeCheckbox}>
-              <Checkbox />
-            </span>
+            <Checkbox className="button" onClick={onChangeCheckbox} />
             <span className="textName">
               {name}
             </span>
