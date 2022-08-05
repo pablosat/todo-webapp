@@ -12,11 +12,7 @@ import { deleteToDo, editToDo, markToDo } from "../toDoReducer";
 
 import "./ToDoItem.scss";
 
-export const ToDoItem = ({
-  toDo: { id, name, completed },
-  dispatch,
-  toDoList
-}) => {
+export const ToDoItem = ({ toDo: { id, name, completed }, dispatch, toDoList }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [newName, setNewName] = useState(name);
 
@@ -54,7 +50,8 @@ export const ToDoItem = ({
 
   const itemClassName = completed ? "item completed" : "item";
 
-  const Checkbox = (props) => (completed ? <FaRegCheckCircle {...props} /> : <FaRegCircle {...props} />);
+  const Checkbox = (props) =>
+    completed ? <FaRegCheckCircle {...props} /> : <FaRegCircle {...props} />;
 
   const submitClass = canSubmit ? "button" : "button disabled";
 
@@ -62,20 +59,18 @@ export const ToDoItem = ({
     <div className={itemClassName}>
       <div className="nameColumn">
         {isEditing ? (
-            <input
-              className="editInput"
-              type="text"
-              value={newName}
-              onChange={onChangeEditInput}
-              ref={inputRef}
-              onKeyDown={handleKeyDown}
-            />
+          <input
+            className="editInput"
+            type="text"
+            value={newName}
+            onChange={onChangeEditInput}
+            ref={inputRef}
+            onKeyDown={handleKeyDown}
+          />
         ) : (
           <>
             <Checkbox className="button" onClick={onChangeCheckbox} />
-            <span className="textName">
-              {name}
-            </span>
+            <span className="textName">{name}</span>
           </>
         )}
       </div>
@@ -88,9 +83,7 @@ export const ToDoItem = ({
           </>
         ) : (
           <>
-            {!completed && (
-              <FaRegEdit onClick={handleEdit} className="button" />
-            )}
+            {!completed && <FaRegEdit onClick={handleEdit} className="button" />}
             <FaRegTrashAlt onClick={handleDelete} className="button" />
           </>
         )}
