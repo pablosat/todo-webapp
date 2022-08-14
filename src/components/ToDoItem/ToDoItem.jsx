@@ -74,7 +74,10 @@ export const ToDoItem = ({
         ) : (
           <>
             <Checkbox className="button" onClick={onChangeCheckbox} />
-            <span className="textName">{name}</span>
+            <span className="textName"
+            data-testid={name}
+            id="asd"
+            >{name}</span>
           </>
         )}
       </div>
