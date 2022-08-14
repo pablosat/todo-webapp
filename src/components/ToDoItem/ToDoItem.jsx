@@ -12,11 +12,7 @@ import { deleteToDo, editToDo, markToDo } from "../toDoReducer";
 
 import "./ToDoItem.scss";
 
-export const ToDoItem = ({
-  toDo: { id, name, completed },
-  dispatch,
-  toDoList
-}) => {
+export const ToDoItem = ({ toDo: { id, name, completed }, dispatch, toDoList }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [newName, setNewName] = useState(name);
 
@@ -74,10 +70,9 @@ export const ToDoItem = ({
         ) : (
           <>
             <Checkbox className="button" onClick={onChangeCheckbox} />
-            <span className="textName"
-            data-testid={name}
-            id="asd"
-            >{name}</span>
+            <span className="textName" data-testid={name} id="asd">
+              {name}
+            </span>
           </>
         )}
       </div>
@@ -90,9 +85,7 @@ export const ToDoItem = ({
           </>
         ) : (
           <>
-            {!completed && (
-              <FaRegEdit onClick={handleEdit} className="button" />
-            )}
+            {!completed && <FaRegEdit onClick={handleEdit} className="button" />}
             <FaRegTrashAlt onClick={handleDelete} className="button" />
           </>
         )}
