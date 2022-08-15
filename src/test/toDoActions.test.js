@@ -6,7 +6,7 @@ let browser;
 beforeAll(async () => {
   if (!browser) {
     browser = await puppeteer.launch({
-      // headless: false
+      headless: false
     });
   }
 
@@ -16,10 +16,6 @@ beforeAll(async () => {
 beforeEach(async () => {
   page = await browser.newPage();
   await page.goto("http://localhost:3000/");
-});
-
-afterEach(async () => {
-  await page.close();
 });
 
 describe("End to end tests with puppeter", () => {
@@ -84,6 +80,20 @@ describe("End to end tests with puppeter", () => {
     const todoItemQuerySelector = `span[data-testid="toDoText-${expected}"]`;
     const actual = await page.$eval(todoItemQuerySelector, (el) => el.innerText);
     expect(actual).toBe(expected);
+  });
+  test("should delete the first ToDo", async () => {
+    const expected = 0;
+    const toDo = "Study node";
+    await page.waitForTimeout(50);
+
+    await addToDo(page, toDo);
+    await page.waitForTimeout(50);
+    const deleteQuerySelector = `svg[data-testid="delete-${toDo}"]`;
+    await page.click(deleteQuerySelector);
+    await page.waitForTimeout(50);
+    const querySelector = `div[data-testid="toDoItem-${toDo}"]`;
+    const actual = await page.$$(querySelector);
+    expect(actual.length).toBe(expected);
   });
 });
 

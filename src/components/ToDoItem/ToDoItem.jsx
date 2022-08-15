@@ -92,7 +92,11 @@ export const ToDoItem = ({ toDo: { id, name, completed }, dispatch, toDoList }) 
             {!completed && (
               <FaRegEdit onClick={handleEdit} className="button" data-testid={`edit-${name}`} />
             )}
-            <FaRegTrashAlt onClick={handleDelete} className="button" />
+            <FaRegTrashAlt
+              onClick={handleDelete}
+              className="button"
+              data-testid={`delete-${name}`}
+            />
           </>
         )}
       </div>
