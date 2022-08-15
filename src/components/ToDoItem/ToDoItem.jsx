@@ -54,7 +54,6 @@ export const ToDoItem = ({ toDo: { id, name, completed }, dispatch, toDoList }) 
     completed ? <FaRegCheckCircle {...props} /> : <FaRegCircle {...props} />;
 
   const submitClass = canSubmit ? "button" : "button disabled";
-
   return (
     <div className={itemClassName} data-testid={`toDoItem-${name}`}>
       <div className="nameColumn">
@@ -66,6 +65,7 @@ export const ToDoItem = ({ toDo: { id, name, completed }, dispatch, toDoList }) 
             onChange={onChangeEditInput}
             ref={inputRef}
             onKeyDown={handleKeyDown}
+            data-testid={`editInput-${name}`}
           />
         ) : (
           <>
@@ -89,7 +89,9 @@ export const ToDoItem = ({ toDo: { id, name, completed }, dispatch, toDoList }) 
           </>
         ) : (
           <>
-            {!completed && <FaRegEdit onClick={handleEdit} className="button" />}
+            {!completed && (
+              <FaRegEdit onClick={handleEdit} className="button" data-testid={`edit-${name}`} />
+            )}
             <FaRegTrashAlt onClick={handleDelete} className="button" />
           </>
         )}

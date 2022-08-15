@@ -5,7 +5,6 @@ import { toDoReducer } from "../toDoReducer";
 
 export const ToDo = () => {
   const [state, dispatch] = useReducer(toDoReducer, toDoReducer());
-  console.log(state);
   return (
     <div>
       <AddToDo toDoList={state} dispatch={dispatch} />
