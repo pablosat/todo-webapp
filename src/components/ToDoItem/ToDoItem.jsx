@@ -56,7 +56,7 @@ export const ToDoItem = ({ toDo: { id, name, completed }, dispatch, toDoList }) 
   const submitClass = canSubmit ? "button" : "button disabled";
 
   return (
-    <div className={itemClassName}>
+    <div className={itemClassName} data-testid={`toDoItem-${name}`}>
       <div className="nameColumn">
         {isEditing ? (
           <input
@@ -69,8 +69,12 @@ export const ToDoItem = ({ toDo: { id, name, completed }, dispatch, toDoList }) 
           />
         ) : (
           <>
-            <Checkbox className="button" onClick={onChangeCheckbox} />
-            <span className="textName" data-testid={name} id="asd">
+            <Checkbox
+              className="button"
+              onClick={onChangeCheckbox}
+              data-testid={`complete-${name}`}
+            />
+            <span className="textName" data-testid={`toDoText-${name}`}>
               {name}
             </span>
           </>
