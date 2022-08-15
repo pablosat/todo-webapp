@@ -13,6 +13,3 @@ TERM = "xterm"
 
 [[plugins]]
 package = "netlify-plugin-cypress"
-  [plugins.inputs.onSuccess]
-    # run tests after the deploy
-    enable = true
