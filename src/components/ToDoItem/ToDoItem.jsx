@@ -74,9 +74,9 @@ export const ToDoItem = ({ toDo: { id, name, completed }, dispatch, toDoList }) 
               onClick={onChangeCheckbox}
               data-testid={`complete-${name}`}
             />
-            <span className="textName" data-testid={`toDoText-${name}`}>
+            <p className="textName" data-testid={`toDoText-${name}`}>
               {name}
-            </span>
+            </p>
           </>
         )}
       </div>
