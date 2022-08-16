@@ -34,6 +34,7 @@ const AddToDo = ({ dispatch, toDoList }) => {
         placeholder="What you have to do?"
         ref={inputRef}
         onKeyDown={handleKeyDown}
+        data-testid="todoInput"
       />
     </div>
   );
