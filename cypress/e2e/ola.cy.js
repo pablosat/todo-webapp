@@ -4,11 +4,11 @@ describe("Demo site", () => {
   it("loads", () => {
     cy.visit("/");
     const toDoName = "Study react";
-    cy.get("input[data-testid=\"todoInput\"]").type(`${toDoName}{enter}`);
+    cy.get('input[data-testid="todoInput"]').type(`${toDoName}{enter}`);
     const asd = cy
       .get(`div[data-testid="toDoItem-${toDoName}"]`)
       .first()
-      .should("have.text", toDoName);
+      .should("have.text", "123");
     console.log({ asd });
   });
 });
