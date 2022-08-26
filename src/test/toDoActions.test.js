@@ -94,5 +94,5 @@ describe("End to end tests with puppeter", () => {
 });
 
 afterAll(async () => {
-  await browser.close();
+  // await browser.close();
 });
