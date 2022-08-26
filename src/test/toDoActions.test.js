@@ -6,7 +6,7 @@ let browser;
 beforeAll(async () => {
   if (!browser) {
     browser = await puppeteer.launch({
-      headless: false
+      // headless: false
     });
   }
 
