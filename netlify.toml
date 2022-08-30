@@ -13,3 +13,8 @@ TERM = "xterm"
 
 [[plugins]]
 package = "netlify-plugin-cypress"
+
+[[plugins]]
+package = "./plugins/puppeteer"
+  [plugins.inputs]
+  thisPluginsInputs = "go here"
