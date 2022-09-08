@@ -11,3 +11,5 @@ Now you are ready to go to the supermarket!
 - Deployed in Netlify
 - Runs Cypress end-to-end tests after Netlify builds
 - Custom Netlify plugin example
+
+<img width="50%" alt="image" src="https://user-images.githubusercontent.com/26602218/189236292-84a75600-3f3e-4b3f-bbe2-48a2791ed297.png">
