@@ -1,0 +1,5 @@
+name: customPlugin
+inputs:
+  - name: thisPluginsInputs
+    description: Test input
+    default: foo

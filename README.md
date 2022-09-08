@@ -6,4 +6,8 @@ Now you are ready to go to the supermarket!
 
 - Made with React
 - Unit tests
-- E2E tests
+- Husky pre commit tests
+- E2E tests with puppeteer and cypress
+- Deployed in Netlify
+- Runs Cypress end-to-end tests after Netlify builds
+- Custom Netlify plugin example

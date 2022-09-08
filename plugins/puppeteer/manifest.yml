@@ -1,5 +1,0 @@
-name: puppeteer
-inputs:
-  - name: thisPluginsInputs
-    description: Describe what keyword to look for
-    default: toshi
