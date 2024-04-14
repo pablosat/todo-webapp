@@ -20,17 +20,17 @@ export const toDoReducer = (state, action = { type: "", payload: {} }) => {
         {
           id: 2,
           name: "Comprar Tele",
-          completed: true
+          completed: false
         },
         {
           id: 6,
           name: "Comprar Rack",
-          completed: true
+          completed: false
         },
         {
           id: 7,
           name: "Hacer menu",
-          completed: true
+          completed: false
         },
         {
           id: 3,
