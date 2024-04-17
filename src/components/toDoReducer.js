@@ -18,13 +18,13 @@ export const toDoReducer = (state, action = { type: "", payload: {} }) => {
     default:
       return [
         {
-          id: 2,
-          name: "Comprar Tele",
-          completed: false
-        },
-        {
           id: 6,
           name: "Comprar Rack",
+          completed: true
+        },
+        {
+          id: 2,
+          name: "Comprar Tele",
           completed: false
         },
         {
@@ -51,27 +51,27 @@ export const toDoReducer = (state, action = { type: "", payload: {} }) => {
           id: 1,
           name: "Definir plan de inversion",
           completed: false
+        },
+        {
+          id: 5,
+          name: "Aceite caja cambios",
+          completed: false
+        },
+        {
+          id: 8,
+          name: "Servicio tecnico winia",
+          completed: false
+        },
+        {
+          id: 10,
+          name: "tapper microondas",
+          completed: false
+        },
+        {
+          id: 11,
+          name: "hora al dentista",
+          completed: false
         }
-        // {
-        //   id: 5,
-        //   name: "Playlist",
-        //   completed: false
-        // },
-        // {
-        //   id: 8,
-        //   name: "Definir mesas",
-        //   completed: false
-        // },
-        // {
-        //   id: 10,
-        //   name: "Zapatos",
-        //   completed: false
-        // },
-        // {
-        //   id: 11,
-        //   name: "Corbata",
-        //   completed: false
-        // }
       ];
   }
 };
