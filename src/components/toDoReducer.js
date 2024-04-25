@@ -25,7 +25,22 @@ export const toDoReducer = (state, action = { type: "", payload: {} }) => {
         {
           id: 2,
           name: "Comprar Tele",
-          completed: false
+          completed: true
+        },
+        {
+          id: 123,
+          name: "Devolver mochilas alicia",
+          completed: true
+        },
+        {
+          id: 8,
+          name: "Servicio tecnico winia",
+          completed: true
+        },
+        {
+          id: 11,
+          name: "hora al dentista",
+          completed: true
         },
         {
           id: 7,
@@ -35,11 +50,6 @@ export const toDoReducer = (state, action = { type: "", payload: {} }) => {
         {
           id: 3,
           name: "Botar ropa",
-          completed: false
-        },
-        {
-          id: 123,
-          name: "Devolver mochilas alicia",
           completed: false
         },
         {
@@ -58,18 +68,18 @@ export const toDoReducer = (state, action = { type: "", payload: {} }) => {
           completed: false
         },
         {
-          id: 8,
-          name: "Servicio tecnico winia",
-          completed: false
-        },
-        {
           id: 10,
           name: "tapper microondas",
           completed: false
         },
         {
-          id: 11,
-          name: "hora al dentista",
+          id: 1131,
+          name: "botar db agenda!",
+          completed: false
+        },
+        {
+          id: 1133,
+          name: "vender ps4",
           completed: false
         }
       ];
