@@ -43,6 +43,16 @@ export const toDoReducer = (state, action = { type: "", payload: {} }) => {
           completed: true
         },
         {
+          id: 10,
+          name: "tapper microondas",
+          completed: true
+        },
+        {
+          id: 1131,
+          name: "botar db agenda!",
+          completed: true
+        },
+        {
           id: 7,
           name: "Hacer menu",
           completed: false
@@ -68,13 +78,8 @@ export const toDoReducer = (state, action = { type: "", payload: {} }) => {
           completed: false
         },
         {
-          id: 10,
-          name: "tapper microondas",
-          completed: false
-        },
-        {
-          id: 1131,
-          name: "botar db agenda!",
+          id: 11331,
+          name: "arreglar jabon quebrado",
           completed: false
         },
         {
