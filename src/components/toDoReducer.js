@@ -18,48 +18,8 @@ export const toDoReducer = (state, action = { type: "", payload: {} }) => {
     default:
       return [
         {
-          id: 6,
-          name: "Comprar Rack",
-          completed: true
-        },
-        {
-          id: 2,
-          name: "Comprar Tele",
-          completed: true
-        },
-        {
-          id: 123,
-          name: "Devolver mochilas alicia",
-          completed: true
-        },
-        {
-          id: 8,
-          name: "Servicio tecnico winia",
-          completed: true
-        },
-        {
-          id: 11,
-          name: "hora al dentista",
-          completed: true
-        },
-        {
-          id: 10,
-          name: "tapper microondas",
-          completed: true
-        },
-        {
-          id: 1131,
-          name: "botar db agenda!",
-          completed: true
-        },
-        {
           id: 7,
           name: "Hacer menu",
-          completed: false
-        },
-        {
-          id: 3,
-          name: "Botar ropa",
           completed: false
         },
         {
@@ -79,12 +39,22 @@ export const toDoReducer = (state, action = { type: "", payload: {} }) => {
         },
         {
           id: 11331,
-          name: "arreglar jabon quebrado",
+          name: "comprar parrilla",
           completed: false
         },
         {
           id: 1133,
-          name: "vender ps4",
+          name: "comprar puf",
+          completed: false
+        },
+        {
+          id: 11133,
+          name: "quitar dgo",
+          completed: false
+        },
+        {
+          id: 113123,
+          name: "quitar kindle",
           completed: false
         }
       ];
