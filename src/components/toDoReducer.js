@@ -44,17 +44,7 @@ export const toDoReducer = (state, action = { type: "", payload: {} }) => {
         },
         {
           id: 1133,
-          name: "comprar puf",
-          completed: false
-        },
-        {
-          id: 11133,
-          name: "quitar dgo",
-          completed: false
-        },
-        {
-          id: 113123,
-          name: "quitar kindle",
+          name: "arreglar bot finanzas",
           completed: false
         }
       ];
