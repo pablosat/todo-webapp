@@ -19,7 +19,7 @@ export const toDoReducer = (state, action = { type: "", payload: {} }) => {
       return [
         {
           id: 7,
-          name: "Hacer menu",
+          name: "Hacer menuuuu",
           completed: false
         },
         {
